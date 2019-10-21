@@ -1,0 +1,277 @@
+
+.AdminArea{
+    position: absolute;
+    left: 90px;
+    top: 66px;
+    height: calc(100vh - 66px);
+    width: calc(100% - 90px);
+    overflow: auto;
+  }
+  
+ 
+  .sidenav---sidenav---_2tBP {
+    position: fixed !important;
+    background-color: #253238 !important;
+    left: 0 !important;
+    top: 48px !important;
+    bottom: 0 !important;
+    padding-top: 0px !important;
+    height: calc(100vh - 66px) !important;
+    z-index: 99 !important;
+  }
+
+  .upload-page .box{
+    border-radius: 10px;
+    background-color: #fff;
+    border: 1px solid #eceff1;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .container-admin{
+      width: 700px;
+      padding: 32px 12px;
+      max-width: 100%;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 768px){
+      .row{margin-right: -10px;
+        margin-left: -10px;}
+      
+  }
+
+  @media screen and (min-width: 576px){
+    .row{margin-right: 10px;
+      margin-left: 10px;}
+    .col-sm-12{
+        flex: 0 0 100%;
+        max-width: 100%;   
+    }
+    .col-sm-4{
+      flex: 0 0 33.33333333%;
+      max-width: 33.33333333%;
+    }
+    .col-sm-2{
+      flex: 0 0 16.66666667%;
+      max-width: 16.66666667%;
+    }
+    .col-sm-6{
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    .col-md-12{
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    
+    
+}
+
+textarea{
+  line-height: 26px;
+  min-height: 140px;
+}
+
+.col-md-12{
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.col-sm-12{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-sm-4{
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+}
+
+.col-sm-2{
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  
+}
+
+
+.col-sm-6{
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+}
+
+.form-group{
+    margin-bottom: 32px;
+}
+
+.col-sm-6 .form-group{
+  max-width: 200px;
+}
+
+.search{
+  margin-left: 0px;
+}
+
+.form-group label {
+    font-size: .875rem;
+    color: #607d8b;
+}
+
+.chars-counter {
+    font-size: .75rem;
+    color: #90a4ae;
+    float: right;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.form-group .form-control {
+    display: block;
+    height: 50px;
+    width: 100%;
+    font-size: 1rem;
+    border-color: #eceff1;
+    border-radius: 6px;
+}
+
+.upload-page h2{
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #13c1ac;
+    font-size: .875rem;
+    margin-bottom: 20px;
+}
+
+.upload-page label{
+    display: inline-block
+
+}
+
+.product-photo{
+  position: relative;
+  border-radius: 10px;
+  margin-right: 16px;
+  transition: .25s;
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.product-photo a{
+  display: none;
+    width: 19px;
+    height: 19px;
+    background: #cfd8dc;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+.product-photo input{
+  display: none;
+}
+
+.placeholder{
+  background-size: 40px;
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #cfd8dc;
+  background-image: url(./images/cameraIcon.png)
+}
+
+.placeholder:hover{
+border-color: #13c1ac
+}
+
+.product-photo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.product-photo:hover img{
+transform: scale(1.2);
+}
+
+.product-photo:hover a{
+  display: inline;
+  }
+
+/* .mat-icon{
+  width: 1px;
+  height: 1px;
+  background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+} */
+
+.product-photo a{
+  display: none;
+    width: 19px;
+    height: 19px;
+    background: #cfd8dc;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+.product-photo svg{
+  width: 60%;
+  height: 60%;
+}
+
+.btn-primary{
+  padding-left: 60px;
+  padding-right: 60px;
+  cursor: pointer;
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 25px;
+  transition: .2s ease-in-out,padding;
+  background-color: #13c1ac;
+    border-color: #13c1ac;
+    margin-bottom: 60px;
+    margin-top: 32px;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    width: 200px;
+    height: 100%;
+}
