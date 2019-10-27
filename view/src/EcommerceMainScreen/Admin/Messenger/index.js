@@ -3,7 +3,7 @@ import ConversationList from './ConversationList';
 import MessageList from './MessageList';
 import axios from 'axios';
 import './Messenger.css';
-import { relativeTimeThreshold } from 'moment';
+import { URL } from '../../../../../config'
 // import {socket} from '../../../App';
 // import socketIOClient from "socket.io-client";
 import socketIOClient from "socket.io-client";
@@ -55,8 +55,7 @@ export default class Messenger extends Component {
 
   getConversations = async (user) => {
         
-      let url =
-      "http://localhost:3001/conversations/get";
+      let url =  URL + "/conversations/get";
       
       let payload = {
         sender: this.props.userLoggedin,
@@ -123,8 +122,7 @@ export default class Messenger extends Component {
 
   getMessages = async (user) => {
     
-    let url =
-    "http://localhost:3001/messages/get";
+    let url = URL + "/messages/get";
     
     let payload = {
        user,

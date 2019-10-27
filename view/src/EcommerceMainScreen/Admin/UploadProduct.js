@@ -9,7 +9,7 @@ import { Dropdown } from 'semantic-ui-react'
 import motorIcon from './images/motorIcon.png'
 import modaIcon from './images/modaIcon.png'
 import sportIcon from './images/sportIcon.png'
-
+import { URL } from '../../../../config'
 import Map from './Map'
 
 
@@ -51,7 +51,7 @@ class UploadProduct extends Component {
         formData.set('description',payload.description);
         formData.set('category',payload.category);
         formData.set('currency',payload.currency);
-        let response = await axios.post('http://localhost:3001/products/add', formData, config)
+        let response = await axios.post(URL + '/products/add', formData, config)
         alert("Product submitted");
         
         if(response.data.code == 200){

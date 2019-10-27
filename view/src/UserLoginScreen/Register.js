@@ -6,6 +6,7 @@ import TextField from 'material-ui/TextField';
 import axios from 'axios';
 import './style.css';
 import Login from './Login';
+import { URL } from '../../../config'
 const bcrypt = require('bcryptjs');
 
 
@@ -34,7 +35,7 @@ class Register extends Component {
                   "email":encryptemail,
                   "password":hash
                   }
-                let response = await axios.post('http://localhost:3001/user/add', payload)
+                let response = await axios.post(URL + '/user/add', payload)
                 if(response.status == 200){
                   alert(response.data.msg);
                    let fields = {};

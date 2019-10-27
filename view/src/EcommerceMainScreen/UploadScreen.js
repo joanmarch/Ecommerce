@@ -5,6 +5,7 @@ import Products from "./Components/Products";
 import Footer from "./Components/Footer";
 import Quickview from "./Components/Quickview";
 import "./scss/style.scss";
+import { URL } from '../../../config'
 
 class UploadScreen extends Component {
   constructor() {
@@ -36,8 +37,7 @@ class UploadScreen extends Component {
   }
   // Fetch Initial Set of Products from external API
   async getProducts() {
-    let url =
-      "http://localhost:3001/products/get";
+    let url = URL + "/products/get";
     try{
         let response = await axios.get(url);
         this.setState({products: response.data});

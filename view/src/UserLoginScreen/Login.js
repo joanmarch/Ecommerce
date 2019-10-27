@@ -7,7 +7,7 @@ import Axios from 'axios';
 import UploadScreen from '../EcommerceMainScreen/UploadScreen';
 import PasswordRecovery from './PasswordRecovery';
 import {socket} from '../EcommerceMainScreen/Admin/Messenger/index';
-import {socketController} from '../Socket';
+import { URL } from '../../../config'
 const bcrypt = require('bcryptjs');
 
 class Login extends Component {
@@ -27,7 +27,7 @@ constructor(props){
     "password":this.state.password
     }
    try{
-     let response = await Axios.post ('http://localhost:3001/user/login', payload)
+     let response = await Axios.post (URL + '/user/login', payload)
      if(response.data.code == 200){
       let hash = response.data.data.password;
       try{

@@ -4,7 +4,7 @@ import Axios from 'axios';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
+import { URL } from '../../../config'
 
 class PasswordRecovery extends Component {
 constructor(props){
@@ -21,7 +21,7 @@ constructor(props){
        "email":this.state.email,
        }
       try{
-        let response = await Axios.post ('http://localhost:3001/user/ForgotPassword', payload)
+        let response = await Axios.post (URL + '/user/ForgotPassword', payload)
         
         if(response.data.code == 200){
             alert("Recovery email sent, please check your mail box");

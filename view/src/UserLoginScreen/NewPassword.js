@@ -6,6 +6,7 @@ import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { NavLink } from "react-router-dom";
 const bcrypt = require('bcryptjs');
+import { URL } from '../../../config'
 
 
 class NewPassword extends Component {
@@ -57,7 +58,7 @@ constructor(props){
                   "password":hash,
                   "tokenId" : tokenId
                   }
-                let response = await Axios.post('http://localhost:3001/user/resetPassword', payload)
+                let response = await Axios.post( URL + '/user/resetPassword', payload)
                 if(response.status == 200){
                   alert(response.data.msg);
                   let fields = {};

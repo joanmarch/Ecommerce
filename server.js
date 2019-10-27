@@ -7,7 +7,7 @@ const favicon = require('express-favicon');
 // favicon.ico goes to /public folder to replace the original one from React
 
 const path = require('path');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const app = express();
 
 //comment this out if you don't use favicon

@@ -6,6 +6,7 @@ import { findDOMNode } from "react-dom";
 import axios from "axios";
 import StripeCheckout from 'react-stripe-checkout';
 import {toast} from 'react-toastify';
+import { URL } from '../../../../config'
 
 
 class Header extends Component {
@@ -48,7 +49,7 @@ class Header extends Component {
  
   async handleCheckout(token, addresses ){
     let purchasedProducts = []
-    let url = "http://localhost:3001/purchase/order";
+    let url = URL + "/purchase/order";
     this.state.cart.map(product => {
       purchasedProducts.push({
         id : product.id,

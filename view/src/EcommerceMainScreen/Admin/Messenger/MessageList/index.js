@@ -4,8 +4,7 @@ import Toolbar from '../Toolbar';
 import ToolbarButton from '../ToolbarButton';
 import Message from '../Message';
 import moment from 'moment';
-import axios from 'axios';
-import {socket} from '../../../../App'
+
 
 import './MessageList.css';
 
