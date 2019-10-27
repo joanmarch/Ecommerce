@@ -15,59 +15,56 @@ export default class MessageList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      messages: [],
-      currentConversationUser:""
+      // messages: [],
+      // currentConversationUser:""
     };
   }
 
-  componentDidMount() {
+  // componentDidMount() {
     
-    this.getMessages(this.props.userChat);
-    this.state.currentConversationUser=this.props.userChat;
-  }
+  //   this.getMessages(this.props.userChat);
+  //   this.state.currentConversationUser=this.props.userChat;
+  // }
 
-  changeFormat=(arr)=>{
-    let result = [];
+  // changeFormat=(arr)=>{
+  //   let result = [];
     
-    for (let i=0; i<arr.length; i++){
+  //   for (let i=0; i<arr.length; i++){
       
-     let element={
-        id: i,
-        author: arr[i].sender,
-        message : arr[i].message.text,
-        timestamp: arr[i].updatedAt
-      }
-      result.push(element);
+  //    let element={
+  //       id: i,
+  //       author: arr[i].sender,
+  //       message : arr[i].message.text,
+  //       timestamp: arr[i].updatedAt
+  //     }
+  //     result.push(element);
       
-    }
-    
-    return result;
-  }
+  //   }
+  //     return result;
+  // }
 
-
-
-  getMessages = async (user) => {
+  // getMessages = async (user) => {
     
-    let url =
-    "http://localhost:3001/messages/get";
+  //   let url =
+  //   "http://localhost:3001/messages/get";
     
-    let payload = {
-      user,
-      sender: this.props.userLoggedin,
-    }
-
+  //   let payload = {
+  //     user,
+  //     sender: this.props.userLoggedin,
+  //   }
+  //   debugger
     
-  try{
-      let response = await axios.post(url, payload);
-      debugger
+  // try{
+  //     let response = await axios.post(url, payload);
       
-      let messages = this.changeFormat(response.data)
       
+  //     let messages = this.changeFormat(response.data)
+  //     debugger
      
-      this.setState(prevState => {
-        return {
-          ...prevState,
-          messages
+  //     this.setState(prevState => {
+  //       return {
+  //         ...prevState,
+  //         messages
           // messages: [
           //   // {
           //   //   id: 1,
@@ -130,28 +127,28 @@ export default class MessageList extends Component {
           //   //   timestamp: new Date().getTime()
           //   // },
           // ]
-        };
-      });
+//         };
+//       });
      
       
-  }catch (error){
-      console.log(error);
-  }
-}
+//   }catch (error){
+//       console.log(error);
+//   }
+// }
     
  
   
 
   renderMessages() {
     let i = 0;
-    let messageCount = this.state.messages.length;
+    let messageCount = this.props.messages.length;
     let messages = [];
     const MY_USER_ID = this.props.userLoggedin;
 
     while (i < messageCount) {
-      let previous = this.state.messages[i - 1];
-      let current = this.state.messages[i];
-      let next = this.state.messages[i + 1];
+      let previous = this.props.messages[i - 1];
+      let current = this.props.messages[i];
+      let next = this.props.messages[i + 1];
       let isMine = current.author === MY_USER_ID;
       let currentMoment = moment(current.timestamp);
       let prevBySameAuthor = false;
@@ -203,14 +200,7 @@ export default class MessageList extends Component {
   }
 
   render() {
-    socket.on("OUTPUT_MESSAGE_toUSER", data =>{
-      this.getMessages()
-    })
-    socket.on("UPDATE_CONVERSATION", user =>{
-      this.getMessages(user)
-      this.setState({currentConversationUser:user})
-      
-    })
+    
    
     
     return(
@@ -226,7 +216,7 @@ export default class MessageList extends Component {
 
         <div className="message-list-container">{this.renderMessages()}</div>
 
-        <Compose userChat={this.state.currentConversationUser} getMessages={this.getMessages} userLoggedin={this.props.userLoggedin} rightItems={[
+        <Compose currentConversationUser={this.props.currentConversationUser} handleEnterKey={this.props.handleEnterKey} userLoggedin={this.props.userLoggedin} rightItems={[
           <ToolbarButton key="photo" icon="ion-ios-camera" />,
           <ToolbarButton key="image" icon="ion-ios-image" />,
           <ToolbarButton key="audio" icon="ion-ios-mic" />,

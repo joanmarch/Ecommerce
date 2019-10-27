@@ -6,26 +6,29 @@ export default class Compose extends Component {
   constructor(props){
     super(props);
     this.state={
-      message :"",
-      
+      message :"", 
     
     }
   }
 
+  static getDerivedStateFromProps(props, state) {
+    // console.log(state);
+    return { currentConversationUser: props.currentConversationUser };
+  }
 
   handelKeyPress = (event) =>{
    
     if(event.key ==="Enter"){
       var data = {
         message : this.state.message,
-        user : this.props.userChat,
+        user : this.props.currentConversationUser,
         sender : this.props.userLoggedin,
         
       }
+      this.props.handleEnterKey (data)
       
-      
-      socket.emit('INPUT_MESSAGE', data); // emit an event to all connected sockets
-      setTimeout(this.props.getMessages,700);
+      // emit an event to all connected sockets
+      // setTimeout(this.props.getMessages,700);
      
       this.setState({message:""})
     }
@@ -38,11 +41,12 @@ export default class Compose extends Component {
   }
 
   render() {
-    debugger
+    
+    
     return (
       <div className="compose">
         <input
-          disabled={this.props.userChat===""?true:false}
+          disabled={this.props.currentConversationUser===""?true:false}
           type="text"
           className="compose-input"
           placeholder="Select a conversation to enable chat..."

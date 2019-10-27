@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.72bb6683.chunk.css",
+    "main.js": "/static/js/main.4e02adfb.chunk.js",
+    "main.js.map": "/static/js/main.4e02adfb.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.310aefb8.js",
+    "runtime~main.js.map": "/static/js/runtime~main.310aefb8.js.map",
+    "static/css/2.6749d01e.chunk.css": "/static/css/2.6749d01e.chunk.css",
+    "static/js/2.297c4657.chunk.js": "/static/js/2.297c4657.chunk.js",
+    "static/js/2.297c4657.chunk.js.map": "/static/js/2.297c4657.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5617b6a3a14e736b02c764be82fa6ef2.js": "/precache-manifest.5617b6a3a14e736b02c764be82fa6ef2.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.6749d01e.chunk.css.map": "/static/css/2.6749d01e.chunk.css.map",
+    "static/css/main.72bb6683.chunk.css.map": "/static/css/main.72bb6683.chunk.css.map",
+    "static/media/Admin.css": "/static/media/cameraIcon.804d1abd.png",
+    "static/media/motorIcon.png": "/static/media/motorIcon.34204b31.png",
+    "static/media/sportIcon.png": "/static/media/sportIcon.66c02a87.png"
+  }
+}

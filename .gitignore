@@ -1,3 +1,7 @@
 # the env (envairoment) files will never be committed to our github account so, we do not have to worry aobut anybody 
 # seeing our secretsKeys
 .env
+src/*
+public/*
+build/static/css/*.map
+build/static/js/*.map

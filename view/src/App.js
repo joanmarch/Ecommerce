@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import Loginscreen from './UserLoginScreen/Loginscreen';
 import UploadScreen from './EcommerceMainScreen/UploadScreen';
 import AdminArea from './EcommerceMainScreen/Admin/AdminArea';
-import socketIOClient from "socket.io-client";
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import NewPassword from './UserLoginScreen/NewPassword';
 const userLoggedinContext = React.createContext("")
+const userContext = React.createContext("");
+// import socketIOClient from "socket.io-client";
+// export const socket = socketIOClient("http://127.0.0.1:8000");
 
-export const socket = socketIOClient("http://127.0.0.1:8000");
 
 
 class App extends Component {
@@ -81,37 +84,16 @@ class App extends Component {
 
 
   handleChat =  (user) =>{
-    debugger
     this.setState({userChat:user})
-    // this.state.userChat=user;
     this.onClickAdmin("messages");
-    
-       
-  //   try{
-  //     var payload={sender:this.props.userLoggedin, user:user, message:"create new chat"}; 
-  //     socket.emit('INPUT_MESSAGE', payload); // emit an event to all connected sockets
-  
-  //       }
-    
-  //   catch(error){
-  //     console.log(error)
-  //   }
    }
 
   render() {
   
-    socket.on('INPUT_MESSAGE_OK', data =>{
-      if (data.message.text ==="create new chat"){
-        this.state.messages=[]
-        
-      }else{
-        
-      }
-      this.getMessages();
-      
-    })
+  
    
-    return (  
+    return ( 
+      <userContext.Provider value={this.state.userChat} >
       <Router>    
       <div className="App">
         <div className="firstdiv">
@@ -129,6 +111,7 @@ class App extends Component {
       </div>
       <Route path="/user/ResetPassword/:tokenId" component = {NewPassword}></Route>
       </Router>
+      </userContext.Provider>
     );
   }
 }

@@ -1,6 +1,7 @@
 .conversation-list-item {
   display: flex;
   align-items: center;
+  /* justify-content: space-between; */
   padding: 10px;
 }
 
@@ -23,17 +24,29 @@
   border-radius: 50%;
   object-fit: cover;
   margin-right: 10px;
+ 
 }
 
 .conversation-title {
   font-size: 14px;
   font-weight: bold;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   margin: 0;
+
 }
 
 .conversation-snippet {
   font-size: 14px;
   color: #888;
   margin: 0;
+  
+}
+
+.conversation-new {
+  width: 17px;
+  height: 17px;
+  background-color: green;
+  margin-left: 30px;
+  border-radius: 50%;
+ 
 }

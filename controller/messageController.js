@@ -29,14 +29,42 @@ class messageController{
     }
     get(req, res){
         
-        const {sender} = req.body;
+        const {sender, user} = req.body;
+      
         
-        // messageModel.find({$or:[{sender:sender},{user:sender}]},(err, data)=>{
-         messageModel.find({$or:[{sender:sender},{user:sender}]}, {$or:[{sender:user},{user:user}]},(err, data)=>{ 
+        messageModel.find({$and:[
+                {$or:[{sender:sender},{user:sender}]},
+                {$or:[{sender:user},{user:user}]}
+            ]
+                
+             },(err, data)=>{ 
             
             if (err) throw new Error (err);
-            else res.send(data);
+            else {
+                res.send(data);
+               
+              
+            }
         }).limit(20).sort({updatedAt: -1})
+        //  messageModel.find({$or:[{sender:sender},{user:sender}], $or:[{sender:user},{user:user}]},(err, data)=>{ 
+            
+        //     if (err) throw new Error (err);
+        //     else {
+        //         res.send(data);
+        //         console.log("----" +data)
+              
+        //     }
+        // }).limit(20).sort({updatedAt: -1})
+        // messageModel.find({$or:[{sender:sender},{user:sender}]},(err, data)=>{ 
+            
+        //     if (err) throw new Error (err);
+        //     else {
+        //         res.send(data);
+        //         console.log("----" +data)
+              
+        //     }
+        // }).limit(20).sort({updatedAt: -1})
+   
       
     }
    

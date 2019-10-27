@@ -6,7 +6,8 @@ import TextField from 'material-ui/TextField';
 import Axios from 'axios';
 import UploadScreen from '../EcommerceMainScreen/UploadScreen';
 import PasswordRecovery from './PasswordRecovery';
-import {socket} from '../App';
+import {socket} from '../EcommerceMainScreen/Admin/Messenger/index';
+import {socketController} from '../Socket';
 const bcrypt = require('bcryptjs');
 
 class Login extends Component {
@@ -37,11 +38,7 @@ constructor(props){
             console.log("Login successfull");
             await socket.emit('SEND_NAME_TO_SERVER', payload.email)
             aux.state.userLoggedin = payload.email;
-            aux.onClickMarket();
-            // var uploadScreen=[];
-            // uploadScreen.push(<UploadScreen appContext={aux} userLoggedin={payload.email} key={"upload-screen"}/>)
-            // aux.setState({loginPage:[],uploadScreen:uploadScreen, userLoggedin:payload.email, pageTitle:"Wellcome to our market"})
-            
+            aux.onClickMarket();           
             
           }else{
             console.log("Username password do not match");

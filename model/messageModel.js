@@ -9,9 +9,9 @@ const messageSchema = new mongoose.Schema({
     },
     // if you want to make a group chat, you can have more than 2 users in this array
     // users:[{
-        user: { type:String, ref:'user', required:true },
+        user: { type:String, ref:'users', required:true },
     // }],
-    sender: { type:String, ref:'user', required:true },
+    sender: { type:String, ref:'users',  required:true },
     read: { type:Date }
 },
 {
@@ -20,4 +20,4 @@ const messageSchema = new mongoose.Schema({
    
 );
 
-module.exports = mongoose.model('message', messageSchema);
+module.exports = mongoose.model('messages', messageSchema);
