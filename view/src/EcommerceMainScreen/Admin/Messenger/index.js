@@ -3,11 +3,11 @@ import ConversationList from './ConversationList';
 import MessageList from './MessageList';
 import axios from 'axios';
 import './Messenger.css';
-import { URL } from '../../../config'
+import { URL, URLchat } from '../../../config'
 // import {socket} from '../../../App';
 // import socketIOClient from "socket.io-client";
 import socketIOClient from "socket.io-client";
-export var socket =  socketIOClient("http://127.0.0.1:8000");
+export var socket =  socketIOClient(URLchat);
 
 
 
@@ -45,7 +45,7 @@ export default class Messenger extends Component {
     socket.on('disconnect', async () => {
       console.log('Disconnected to socket:');
       if (!socket.connected){
-        socket = socketIOClient("http://127.0.0.1:8000")
+        socket = socketIOClient("URLchat")
         // await socket.emit('SEND_NAME_TO_SERVER', props.userLoggedin) 
       }
     });
