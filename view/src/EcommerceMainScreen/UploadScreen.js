@@ -5,7 +5,7 @@ import Products from "./Components/Products";
 import Footer from "./Components/Footer";
 import Quickview from "./Components/Quickview";
 import "./scss/style.scss";
-import { URL } from '../../../config'
+import { URL } from '../config'
 
 class UploadScreen extends Component {
   constructor() {

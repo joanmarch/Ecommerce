@@ -7,7 +7,7 @@ import Axios from 'axios';
 import UploadScreen from '../EcommerceMainScreen/UploadScreen';
 import PasswordRecovery from './PasswordRecovery';
 import {socket} from '../EcommerceMainScreen/Admin/Messenger/index';
-import { URL } from '../../../config'
+import { URL } from '../config'
 const bcrypt = require('bcryptjs');
 
 class Login extends Component {

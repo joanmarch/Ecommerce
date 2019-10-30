@@ -6,7 +6,7 @@ import TextField from 'material-ui/TextField';
 import axios from 'axios';
 import './style.css';
 import Login from './Login';
-import { URL } from '../../../config'
+import { URL } from '../config'
 const bcrypt = require('bcryptjs');
 
 

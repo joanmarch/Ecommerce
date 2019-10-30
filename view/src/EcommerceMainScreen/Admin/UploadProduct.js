@@ -9,7 +9,7 @@ import { Dropdown } from 'semantic-ui-react'
 import motorIcon from './images/motorIcon.png'
 import modaIcon from './images/modaIcon.png'
 import sportIcon from './images/sportIcon.png'
-import { URL } from '../../../../config'
+import { URL } from '../../config'
 import Map from './Map'
 
 

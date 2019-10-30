@@ -3,7 +3,7 @@ import ConversationList from './ConversationList';
 import MessageList from './MessageList';
 import axios from 'axios';
 import './Messenger.css';
-import { URL } from '../../../../../config'
+import { URL } from '../../../config'
 // import {socket} from '../../../App';
 // import socketIOClient from "socket.io-client";
 import socketIOClient from "socket.io-client";

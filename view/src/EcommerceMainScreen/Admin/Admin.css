@@ -30,7 +30,7 @@
   }
   
   .container-admin{
-      width: 700px;
+      width: 100%;
       padding: 32px 12px;
       max-width: 100%;
       position: relative;
@@ -274,4 +274,46 @@ transform: scale(1.2);
     vertical-align: middle;
     width: 200px;
     height: 100%;
+}
+
+.MainFlexContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; 
+}
+
+.Box1 {
+  align-self : flex-start;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  
+}
+
+.Box1_1{
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-bottom: 20px
+
+}
+
+.CloseSessionButton {
+  margin-left: auto
+}
+
+.Box1_2{
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.Box1_3{
+  margin-left: auto;
+ 
 }

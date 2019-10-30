@@ -6,7 +6,7 @@ import { findDOMNode } from "react-dom";
 import axios from "axios";
 import StripeCheckout from 'react-stripe-checkout';
 import {toast} from 'react-toastify';
-import { URL } from '../../../../config'
+import { URL } from '../../config'
 
 
 class Header extends Component {

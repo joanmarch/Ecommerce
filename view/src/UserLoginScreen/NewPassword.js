@@ -5,8 +5,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { NavLink } from "react-router-dom";
+import { URL } from '../config'
 const bcrypt = require('bcryptjs');
-import { URL } from '../../../config'
+
 
 
 class NewPassword extends Component {

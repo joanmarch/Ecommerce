@@ -4,7 +4,7 @@ import Axios from 'axios';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { URL } from '../../../config'
+import { URL } from '../config'
 
 class PasswordRecovery extends Component {
 constructor(props){
