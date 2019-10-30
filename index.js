@@ -44,8 +44,8 @@ const io = require('socket.io')(server, {
 //   cookie: false
 });
 let serverNames = [];
-server.listen(8000, () => {
-    console.log('connected to port 8000!')
+server.listen(5000, () => {
+    console.log('connected to port 5000!')
 });
 // controller = require ('./controller/messageController');
 const messageModel = require('./model/messageModel');
