@@ -2,6 +2,7 @@ import React from 'react'
 import { withGoogleMap, GoogleMap, withScriptjs, InfoWindow, Marker } from "react-google-maps";
 import Autocomplete from 'react-google-autocomplete';
 import Geocode from "react-geocode";
+import LocationSearchInput  from './Place-autocomplete';
 Geocode.setApiKey("AIzaSyBvTxlkfE6_2E5KawdmVGhMFWL9-ppaHN8");
 Geocode.enableDebug();
 class Map extends React.Component{
@@ -201,7 +202,7 @@ const AsyncMap = withScriptjs(
       defaultCenter={{ lat: this.state.mapPosition.lat, lng: this.state.mapPosition.lng }}
      >
       {/* For Auto complete Search Box */}
-      <Autocomplete
+      {/* <Autocomplete
        style={{
         width: '100%',
         height: '40px',
@@ -210,8 +211,9 @@ const AsyncMap = withScriptjs(
         marginBottom: '100px'
        }}
        onPlaceSelected={ this.onPlaceSelected }
-       types={['(regions)']}
-      />
+       types={['(country)']}
+      /> */}
+      <LocationSearchInput></LocationSearchInput>
 {/*Marker*/}
       <Marker google={this.props.google}
        name={'Dolores park'}
