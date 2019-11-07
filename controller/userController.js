@@ -61,7 +61,7 @@ class userControll{
                 var mailOptions = { from: 'no-reply@yourwebapplication.com', to: user.email, subject: 'Account Verification Token', text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/user/confirmation\/' + token.token + '.\n' };
                 await transporter.sendMail(mailOptions, function (err, info) {
                     if (err) {
-                        console.log("+++" + req.headers.host)
+                        console.log("+++" + user.email)
                     res.status(500).send({ msg: err.message }); 
                     }else{
                     // res.status(200).send('A verification email has been sent to ' + user.email + '.');
