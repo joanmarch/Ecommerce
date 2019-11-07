@@ -10,7 +10,7 @@ class userControll{
             email,
             password,
         }
-        console.log("+++++++++")
+        
         userModel.findOne({ email: req.body.email }, function (err, user) {
             if (!user){
                 userModel.create(newUser,(err, user)=>{
@@ -45,7 +45,7 @@ class userControll{
             }else if (user.isVerified) {
                 return res.send({ msg: 'This account has already been verified. Please log in.' });
             }else{
-                console.log("--------")
+               
                  
                      // Create a verification token for this user
                      var token = new Token({ _userId: user._id, token: crypto.randomBytes(16).toString('hex') });
@@ -53,7 +53,10 @@ class userControll{
                 
                      // Save the verification token
             token.save(async function (err) {
-                if (err) { return res.status(500).send({ msg: err.message }); }
+                if (err) {
+                    console.log("+++++")
+                     return res.status(500).send({ msg: err.message }); 
+                    }
      
                 // Send the email
                 // var transporter = nodemailer.createTransport({ service: 'Sendgrid', auth: { user: process.env.SENDGRID_USERNAME, pass: process.env.SENDGRID_PASSWORD } });
@@ -61,6 +64,7 @@ class userControll{
                 var mailOptions = { from: 'no-reply@yourwebapplication.com', to: user.email, subject: 'Account Verification Token', text: 'Hello,\n\n' + 'Please verify your account by clicking the link: \nhttp:\/\/' + req.headers.host + '\/user/confirmation\/' + token.token + '.\n' };
                 await transporter.sendMail(mailOptions, function (err, info) {
                     if (err) {
+                        console.log("----")
                     res.status(500).send({ msg: err.message }); 
                     }else{
                     // res.status(200).send('A verification email has been sent to ' + user.email + '.');
