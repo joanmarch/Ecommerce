@@ -11,7 +11,7 @@ class productsController{
         const { name, price, user, description, category, curreny} = req.body;
       
         var newProduct = {
-            image: "http://localhost:3001/" + req.file.path,
+            image: "http://142.93.109.226/server/" + req.file.path,
             name,
             price,
             description,
