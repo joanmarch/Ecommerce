@@ -10,6 +10,7 @@ class userControll{
             email,
             password,
         }
+        console.log("+++++++++")
         userModel.findOne({ email: req.body.email }, function (err, user) {
             if (!user){
                 userModel.create(newUser,(err, user)=>{
@@ -44,6 +45,7 @@ class userControll{
             }else if (user.isVerified) {
                 return res.send({ msg: 'This account has already been verified. Please log in.' });
             }else{
+                console.log("--------")
                  
                      // Create a verification token for this user
                      var token = new Token({ _userId: user._id, token: crypto.randomBytes(16).toString('hex') });
