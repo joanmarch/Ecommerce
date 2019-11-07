@@ -100,7 +100,7 @@ class App extends Component {
              <div className="secdiv"> 
                  <button className="btn mybuttonicon"><i className="fa fa-bars"></i></button>
                  <h1 className = "abcd">{this.state.pageTitle}</h1>
-                 {this.state.userLoggedin===""? <button className="btn mybuttontext" onClick={()=>this.onClickAdmin("profile")}><span className="btn">Admin</span></button> : null }
+                 {this.state.userLoggedin===""? null : <button className="btn mybuttontext" onClick={()=>this.onClickAdmin("profile")}><span className="btn">Admin</span></button>  }
                  {this.state.userLoggedin===""? <button className="btn mybuttontext" onClick={this.onClickLogin}><span className="btn">LogIn</span></button> : <span className="btn">Wellcome {this.state.userLoggedin}</span>}
                  <button className="btn mybuttontext" onClick={this.onClickMarket}><span className="btn">Market</span></button>
               </div>                
