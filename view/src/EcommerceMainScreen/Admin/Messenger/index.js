@@ -7,8 +7,10 @@ import { URL, URLchat } from '../../../config'
 // import {socket} from '../../../App';
 // import socketIOClient from "socket.io-client";
 import socketIOClient from "socket.io-client";
-export var socket =  socketIOClient(URLchat, {
-  path: '/chat/socket.io'
+export var socket =  socketIOClient('/', {
+  secure: true,
+  rejectUnauthorized: false,
+  path: URLchat
 });
 
 
