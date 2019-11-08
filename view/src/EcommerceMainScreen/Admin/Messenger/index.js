@@ -49,7 +49,11 @@ export default class Messenger extends Component {
     socket.on('disconnect', async () => {
       console.log('Disconnected to socket:');
       if (!socket.connected){
-        socket = socketIOClient("URLchat")
+        socket = socketIOClient('/',{
+          secure: true,
+          rejectUnauthorized: false,
+          path: '/chat/socket.io'
+        })
         // await socket.emit('SEND_NAME_TO_SERVER', props.userLoggedin) 
       }
     });

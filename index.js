@@ -56,7 +56,7 @@ const productModel = require('./model/productsModel');
 
 
 io.on('connection', socket => { 
-console.log("+++++ I am here!")
+
 //get a new message from a user after a handle Enter Key 
     socket.on('INPUT_MESSAGE',  data =>{   
         let userSocket ="";  
