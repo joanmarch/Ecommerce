@@ -36,7 +36,7 @@ app.use('/conversations', conversationRoutes);
 //SOCKET IO EVENTS...
 const server = require('http').Server(app);
 const io = require('socket.io')(server, {
-    // path: '/test',
+  path: '/chat/socket.io',
 //   serveClient: false,
   // below are engine.IO options
   pingInterval: 6000,
