@@ -8,7 +8,7 @@ import { URL, URLchat } from '../../../config'
 // import socketIOClient from "socket.io-client";
 import socketIOClient from "socket.io-client";
 export var socket =  socketIOClient(URLchat, {
-  path: 'chat/socket.io'
+  path: '/chat/socket.io'
 });
 
 
