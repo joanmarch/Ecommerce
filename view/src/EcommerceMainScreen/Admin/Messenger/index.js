@@ -10,7 +10,7 @@ import socketIOClient from "socket.io-client";
 export var socket =  socketIOClient('/', {
   secure: true,
   rejectUnauthorized: false,
-  path: URLchat
+  path: '/chat'
 });
 
 
